@@ -16,33 +16,33 @@
     <input type="submit" value="Result">
 </form>
 <?php
-    if (isset($_GET['num']) && isset($_GET['num2']) && isset($_GET['num3'])){
-        $n = intval($_GET['num']);
-        $m = intval($_GET['num2']);
-        $y = intval($_GET['num3']);
-        $isPositive = false;
-        $count = 0;
+if (isset($_GET['num']) && isset($_GET['num2']) && isset($_GET['num3'])){
+    $n = intval($_GET['num']);
+    $m = intval($_GET['num2']);
+    $y = intval($_GET['num3']);
+    $isPositive = false;
+    $count = 0;
 
-        $nums = [$n, $m, $y];
+    $nums = [$n, $m, $y];
 
-        foreach ($nums as $num){
-            if ($num == 0){
-                $isPositive = true;
-                echo "There is 0 <br>";
-                break;
-            } elseif ($num < 0){
-                $count++;
-            } else {
-                continue;
-            }
-        }
-
-        if ($isPositive || $count % 2 == 0){
-            echo "Positive :)";
-        } else   {
-            echo "Negative :(";
+    foreach ($nums as $num){
+        if ($num == 0){
+            $isPositive = true;
+            echo "There is 0 <br>";
+            break;
+        } elseif ($num < 0){
+            $count++;
+        } else {
+            continue;
         }
     }
+
+    if ($isPositive || $count % 2 == 0){
+        echo "Positive :)";
+    } else   {
+        echo "Negative :(";
+    }
+}
 
 
 ?>
